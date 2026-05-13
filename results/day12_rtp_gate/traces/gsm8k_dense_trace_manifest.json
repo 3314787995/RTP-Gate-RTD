@@ -1,0 +1,19 @@
+{
+  "status": "done",
+  "model_path": "/root/hs/paper2_layer_pruning/cache/huggingface/models--google--gemma-2-2b-it/snapshots/299a8560bedf22ed1c72a8a11e7dce4a7f9f51f8",
+  "baseline_json": "/root/hs/paper2_layer_pruning/results/day5_technical_gap_closure/gemma_base_full_eval_gsm8k_1319.json",
+  "top_k": 100,
+  "max_seq_tokens": 2048,
+  "seed": 1234,
+  "partition_mode": "full",
+  "counts": {
+    "smoke": 50,
+    "calibration": 200,
+    "holdout": 100
+  },
+  "outputs": {
+    "smoke": "/root/hs/paper2_layer_pruning/results/day12_rtp_gate/traces/gsm8k_dense_traces_smoke.jsonl",
+    "calibration": "/root/hs/paper2_layer_pruning/results/day12_rtp_gate/traces/gsm8k_dense_traces_calibration.jsonl",
+    "holdout": "/root/hs/paper2_layer_pruning/results/day12_rtp_gate/traces/gsm8k_dense_traces_holdout.jsonl"
+  }
+}

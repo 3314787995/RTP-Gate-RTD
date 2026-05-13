@@ -1,0 +1,153 @@
+{
+  "status": "done",
+  "candidate_name": "bi_6",
+  "model_path": "/root/hs/paper2_layer_pruning/cache/huggingface/models--google--gemma-2-2b-it/snapshots/299a8560bedf22ed1c72a8a11e7dce4a7f9f51f8",
+  "adapter_path": null,
+  "runtime_skip_layers": [
+    2,
+    11,
+    20,
+    21,
+    23,
+    24
+  ],
+  "runtime_skip": {
+    "enabled": true,
+    "skip_layers": [
+      2,
+      11,
+      20,
+      21,
+      23,
+      24
+    ],
+    "kept_layers": [
+      0,
+      1,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      22,
+      25
+    ],
+    "changed_sliding_if_resaved": [
+      {
+        "old_layer": 3,
+        "new_position": 2,
+        "original_is_sliding": false,
+        "resaved_would_be_sliding": true
+      },
+      {
+        "old_layer": 4,
+        "new_position": 3,
+        "original_is_sliding": true,
+        "resaved_would_be_sliding": false
+      },
+      {
+        "old_layer": 5,
+        "new_position": 4,
+        "original_is_sliding": false,
+        "resaved_would_be_sliding": true
+      },
+      {
+        "old_layer": 6,
+        "new_position": 5,
+        "original_is_sliding": true,
+        "resaved_would_be_sliding": false
+      },
+      {
+        "old_layer": 7,
+        "new_position": 6,
+        "original_is_sliding": false,
+        "resaved_would_be_sliding": true
+      },
+      {
+        "old_layer": 8,
+        "new_position": 7,
+        "original_is_sliding": true,
+        "resaved_would_be_sliding": false
+      },
+      {
+        "old_layer": 9,
+        "new_position": 8,
+        "original_is_sliding": false,
+        "resaved_would_be_sliding": true
+      },
+      {
+        "old_layer": 10,
+        "new_position": 9,
+        "original_is_sliding": true,
+        "resaved_would_be_sliding": false
+      }
+    ],
+    "preserve_layer_idx": false
+  },
+  "top_k": 100,
+  "trace_paths": [
+    "/root/hs/paper2_layer_pruning/results/day12_rtp_gate/traces/gsm8k_dense_traces_calibration.jsonl",
+    "/root/hs/paper2_layer_pruning/results/day12_rtp_gate/traces/gsm8k_dense_traces_holdout.jsonl"
+  ],
+  "trace_count": 300,
+  "weights": {
+    "normalized_delta_nll": 0.25,
+    "topk_union_jsd": 0.18,
+    "late_jsd_spike": 0.15,
+    "late_entropy_spike": 0.15,
+    "entropy_monotonicity_violation": 0.1,
+    "math_token_delta_nll": 0.08,
+    "answer_token_delta_nll": 0.05,
+    "overconfidence_collapse": 0.04
+  },
+  "overall": {
+    "normalized_delta_nll": 2923.6252539030615,
+    "topk_union_jsd": 0.24238169160232284,
+    "late_jsd_spike": 0.6306191329723236,
+    "late_entropy_spike": 3.2059010499952874,
+    "entropy_monotonicity_violation": 0.5267090560859795,
+    "math_token_delta_nll": 4317.414295757643,
+    "answer_token_delta_nll": 1398.1268571441772,
+    "overconfidence_collapse": 2.070200772542007,
+    "rtd": 1146.9603856620292,
+    "token_count": 174.56666666666666
+  },
+  "by_partition": {
+    "calibration": {
+      "normalized_delta_nll": 2882.916843001534,
+      "topk_union_jsd": 0.2407757304579272,
+      "late_jsd_spike": 0.6296319943400506,
+      "late_entropy_spike": 3.202567864418957,
+      "entropy_monotonicity_violation": 0.5256303607088616,
+      "math_token_delta_nll": 4324.241911607149,
+      "answer_token_delta_nll": 1574.5889517794142,
+      "overconfidence_collapse": 2.1414173963847043,
+      "rtd": 1146.1544006101478,
+      "token_count": 174.43
+    },
+    "holdout": {
+      "normalized_delta_nll": 3005.0420757061165,
+      "topk_union_jsd": 0.24559361389111448,
+      "late_jsd_spike": 0.63259341023687,
+      "late_entropy_spike": 3.2125674211479476,
+      "entropy_monotonicity_violation": 0.5288664468402149,
+      "math_token_delta_nll": 4303.759064058627,
+      "answer_token_delta_nll": 1045.2026678737013,
+      "overconfidence_collapse": 1.9277675248566115,
+      "rtd": 1148.5723557657898,
+      "token_count": 174.84
+    }
+  },
+  "item_csv": "/root/hs/paper2_layer_pruning/results/day12_rtp_gate/rtd_scores/bi_6_items.csv"
+}

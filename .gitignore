@@ -1,0 +1,19 @@
+__pycache__/
+*.py[cod]
+*.log
+*.pid
+*.status.json
+
+# Local environments and model/cache data
+envs/
+cache/
+models/
+tmp/
+.venv/
+venv/
+
+# Large/intermediate experiment artifacts
+results/day12_rtp_gate/traces/*.jsonl
+results/day12_rtp_gate/raw_eval/**/*.jsonl
+code/on-the-limits-of-layer-pruning/eval/gen_eval/datasets/
+logs/

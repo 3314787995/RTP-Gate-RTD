@@ -1,0 +1,209 @@
+{
+  "status": "done",
+  "candidate_name": "rtp_gate_structure_drop_1_20",
+  "model_path": "/root/hs/paper2_layer_pruning/cache/huggingface/models--google--gemma-2-2b-it/snapshots/299a8560bedf22ed1c72a8a11e7dce4a7f9f51f8",
+  "adapter_path": null,
+  "runtime_skip_layers": [
+    1,
+    20
+  ],
+  "runtime_skip": {
+    "enabled": true,
+    "skip_layers": [
+      1,
+      20
+    ],
+    "kept_layers": [
+      0,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      21,
+      22,
+      23,
+      24,
+      25
+    ],
+    "changed_sliding_if_resaved": [
+      {
+        "old_layer": 2,
+        "new_position": 1,
+        "original_is_sliding": true,
+        "resaved_would_be_sliding": false
+      },
+      {
+        "old_layer": 3,
+        "new_position": 2,
+        "original_is_sliding": false,
+        "resaved_would_be_sliding": true
+      },
+      {
+        "old_layer": 4,
+        "new_position": 3,
+        "original_is_sliding": true,
+        "resaved_would_be_sliding": false
+      },
+      {
+        "old_layer": 5,
+        "new_position": 4,
+        "original_is_sliding": false,
+        "resaved_would_be_sliding": true
+      },
+      {
+        "old_layer": 6,
+        "new_position": 5,
+        "original_is_sliding": true,
+        "resaved_would_be_sliding": false
+      },
+      {
+        "old_layer": 7,
+        "new_position": 6,
+        "original_is_sliding": false,
+        "resaved_would_be_sliding": true
+      },
+      {
+        "old_layer": 8,
+        "new_position": 7,
+        "original_is_sliding": true,
+        "resaved_would_be_sliding": false
+      },
+      {
+        "old_layer": 9,
+        "new_position": 8,
+        "original_is_sliding": false,
+        "resaved_would_be_sliding": true
+      },
+      {
+        "old_layer": 10,
+        "new_position": 9,
+        "original_is_sliding": true,
+        "resaved_would_be_sliding": false
+      },
+      {
+        "old_layer": 11,
+        "new_position": 10,
+        "original_is_sliding": false,
+        "resaved_would_be_sliding": true
+      },
+      {
+        "old_layer": 12,
+        "new_position": 11,
+        "original_is_sliding": true,
+        "resaved_would_be_sliding": false
+      },
+      {
+        "old_layer": 13,
+        "new_position": 12,
+        "original_is_sliding": false,
+        "resaved_would_be_sliding": true
+      },
+      {
+        "old_layer": 14,
+        "new_position": 13,
+        "original_is_sliding": true,
+        "resaved_would_be_sliding": false
+      },
+      {
+        "old_layer": 15,
+        "new_position": 14,
+        "original_is_sliding": false,
+        "resaved_would_be_sliding": true
+      },
+      {
+        "old_layer": 16,
+        "new_position": 15,
+        "original_is_sliding": true,
+        "resaved_would_be_sliding": false
+      },
+      {
+        "old_layer": 17,
+        "new_position": 16,
+        "original_is_sliding": false,
+        "resaved_would_be_sliding": true
+      },
+      {
+        "old_layer": 18,
+        "new_position": 17,
+        "original_is_sliding": true,
+        "resaved_would_be_sliding": false
+      },
+      {
+        "old_layer": 19,
+        "new_position": 18,
+        "original_is_sliding": false,
+        "resaved_would_be_sliding": true
+      }
+    ],
+    "preserve_layer_idx": false
+  },
+  "top_k": 100,
+  "trace_paths": [
+    "/root/hs/paper2_layer_pruning/results/day12_rtp_gate/traces/gsm8k_dense_traces_calibration.jsonl",
+    "/root/hs/paper2_layer_pruning/results/day12_rtp_gate/traces/gsm8k_dense_traces_holdout.jsonl"
+  ],
+  "trace_count": 300,
+  "weights": {
+    "normalized_delta_nll": 0.25,
+    "topk_union_jsd": 0.18,
+    "late_jsd_spike": 0.15,
+    "late_entropy_spike": 0.15,
+    "entropy_monotonicity_violation": 0.1,
+    "math_token_delta_nll": 0.08,
+    "answer_token_delta_nll": 0.05,
+    "overconfidence_collapse": 0.04
+  },
+  "overall": {
+    "normalized_delta_nll": 316.69121650740095,
+    "topk_union_jsd": 0.02406488142530652,
+    "late_jsd_spike": 0.11962433740564783,
+    "late_entropy_spike": 0.4083356636359446,
+    "entropy_monotonicity_violation": 0.15831484647876992,
+    "math_token_delta_nll": 798.8634642910217,
+    "answer_token_delta_nll": 10.496893002072438,
+    "overconfidence_collapse": 0.46467777640634106,
+    "rtd": 143.72467019475252,
+    "token_count": 174.56666666666666
+  },
+  "by_partition": {
+    "calibration": {
+      "normalized_delta_nll": 312.0872131989448,
+      "topk_union_jsd": 0.024248831215197778,
+      "late_jsd_spike": 0.12008552509285948,
+      "late_entropy_spike": 0.40585829156341036,
+      "entropy_monotonicity_violation": 0.15870630805019614,
+      "math_token_delta_nll": 798.6664108562887,
+      "answer_token_delta_nll": 13.223613698961156,
+      "overconfidence_collapse": 0.46388866698020964,
+      "rtd": 142.69397939278883,
+      "token_count": 174.43
+    },
+    "holdout": {
+      "normalized_delta_nll": 325.89922312431327,
+      "topk_union_jsd": 0.023696981845523976,
+      "late_jsd_spike": 0.11870196203122468,
+      "late_entropy_spike": 0.4132904077810134,
+      "entropy_monotonicity_violation": 0.1575319233359175,
+      "math_token_delta_nll": 799.2575711604891,
+      "answer_token_delta_nll": 5.043451608294993,
+      "overconfidence_collapse": 0.4662559952586048,
+      "rtd": 145.78605179868018,
+      "token_count": 174.84
+    }
+  },
+  "item_csv": "/root/hs/paper2_layer_pruning/results/day12_rtp_gate/rtd_scores/rtp_gate_structure_drop_1_20_items.csv"
+}

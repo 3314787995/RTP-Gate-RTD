@@ -1,0 +1,181 @@
+{
+  "status": "done",
+  "candidate_name": "rtp_gate_structure_drop_1_9_17_24",
+  "model_path": "/root/hs/paper2_layer_pruning/cache/huggingface/models--google--gemma-2-2b-it/snapshots/299a8560bedf22ed1c72a8a11e7dce4a7f9f51f8",
+  "adapter_path": null,
+  "runtime_skip_layers": [
+    1,
+    9,
+    17,
+    24
+  ],
+  "runtime_skip": {
+    "enabled": true,
+    "skip_layers": [
+      1,
+      9,
+      17,
+      24
+    ],
+    "kept_layers": [
+      0,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      25
+    ],
+    "changed_sliding_if_resaved": [
+      {
+        "old_layer": 2,
+        "new_position": 1,
+        "original_is_sliding": true,
+        "resaved_would_be_sliding": false
+      },
+      {
+        "old_layer": 3,
+        "new_position": 2,
+        "original_is_sliding": false,
+        "resaved_would_be_sliding": true
+      },
+      {
+        "old_layer": 4,
+        "new_position": 3,
+        "original_is_sliding": true,
+        "resaved_would_be_sliding": false
+      },
+      {
+        "old_layer": 5,
+        "new_position": 4,
+        "original_is_sliding": false,
+        "resaved_would_be_sliding": true
+      },
+      {
+        "old_layer": 6,
+        "new_position": 5,
+        "original_is_sliding": true,
+        "resaved_would_be_sliding": false
+      },
+      {
+        "old_layer": 7,
+        "new_position": 6,
+        "original_is_sliding": false,
+        "resaved_would_be_sliding": true
+      },
+      {
+        "old_layer": 8,
+        "new_position": 7,
+        "original_is_sliding": true,
+        "resaved_would_be_sliding": false
+      },
+      {
+        "old_layer": 18,
+        "new_position": 15,
+        "original_is_sliding": true,
+        "resaved_would_be_sliding": false
+      },
+      {
+        "old_layer": 19,
+        "new_position": 16,
+        "original_is_sliding": false,
+        "resaved_would_be_sliding": true
+      },
+      {
+        "old_layer": 20,
+        "new_position": 17,
+        "original_is_sliding": true,
+        "resaved_would_be_sliding": false
+      },
+      {
+        "old_layer": 21,
+        "new_position": 18,
+        "original_is_sliding": false,
+        "resaved_would_be_sliding": true
+      },
+      {
+        "old_layer": 22,
+        "new_position": 19,
+        "original_is_sliding": true,
+        "resaved_would_be_sliding": false
+      },
+      {
+        "old_layer": 23,
+        "new_position": 20,
+        "original_is_sliding": false,
+        "resaved_would_be_sliding": true
+      }
+    ],
+    "preserve_layer_idx": false
+  },
+  "top_k": 100,
+  "trace_paths": [
+    "/root/hs/paper2_layer_pruning/results/day12_rtp_gate/traces/gsm8k_dense_traces_calibration.jsonl",
+    "/root/hs/paper2_layer_pruning/results/day12_rtp_gate/traces/gsm8k_dense_traces_holdout.jsonl"
+  ],
+  "trace_count": 300,
+  "weights": {
+    "normalized_delta_nll": 0.25,
+    "topk_union_jsd": 0.18,
+    "late_jsd_spike": 0.15,
+    "late_entropy_spike": 0.15,
+    "entropy_monotonicity_violation": 0.1,
+    "math_token_delta_nll": 0.08,
+    "answer_token_delta_nll": 0.05,
+    "overconfidence_collapse": 0.04
+  },
+  "overall": {
+    "normalized_delta_nll": 227.40250009521492,
+    "topk_union_jsd": 0.06721187337492808,
+    "late_jsd_spike": 0.3015776550623597,
+    "late_entropy_spike": 1.3078115546876143,
+    "entropy_monotonicity_violation": 0.2652524872902328,
+    "math_token_delta_nll": 396.62455180543753,
+    "answer_token_delta_nll": 58.89552190920104,
+    "overconfidence_collapse": 1.0883578620349166,
+    "rtd": 91.84893134557925,
+    "token_count": 174.56666666666666
+  },
+  "by_partition": {
+    "calibration": {
+      "normalized_delta_nll": 232.23428534826974,
+      "topk_union_jsd": 0.06689106029742738,
+      "late_jsd_spike": 0.30278042271126077,
+      "late_entropy_spike": 1.2946265699757953,
+      "entropy_monotonicity_violation": 0.2635962526979574,
+      "math_token_delta_nll": 412.2433783164901,
+      "answer_token_delta_nll": 63.14574006381699,
+      "overconfidence_collapse": 1.0695836990973018,
+      "rtd": 94.5161230185678,
+      "token_count": 174.43
+    },
+    "holdout": {
+      "normalized_delta_nll": 217.73892958910514,
+      "topk_union_jsd": 0.06785349952992945,
+      "late_jsd_spike": 0.2991721197645571,
+      "late_entropy_spike": 1.3341815241112525,
+      "entropy_monotonicity_violation": 0.2685649564747836,
+      "math_token_delta_nll": 365.38689878333264,
+      "answer_token_delta_nll": 50.39508559996926,
+      "overconfidence_collapse": 1.1259061879101477,
+      "rtd": 86.514547999602,
+      "token_count": 174.84
+    }
+  },
+  "item_csv": "/root/hs/paper2_layer_pruning/results/day12_rtp_gate/rtd_scores/rtp_gate_structure_drop_1_9_17_24_items.csv"
+}

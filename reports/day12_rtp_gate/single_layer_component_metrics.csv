@@ -1,0 +1,13 @@
+score_field,n,spearman_vs_retention,spearman_abs,auroc_risky,precision_at_5,precision_at_10
+layer_index,0,,,,,
+reverse_tail_priority,0,,,,,
+bi_prune_priority,0,,,,,
+normalized_delta_nll,0,,,,,
+topk_union_jsd,0,,,,,
+late_jsd_spike,0,,,,,
+late_entropy_spike,0,,,,,
+entropy_monotonicity_violation,0,,,,,
+math_token_delta_nll,0,,,,,
+answer_token_delta_nll,0,,,,,
+overconfidence_collapse,0,,,,,
+rtd,0,,,,,

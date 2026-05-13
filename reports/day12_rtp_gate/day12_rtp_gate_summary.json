@@ -1,0 +1,70 @@
+{
+  "status": "done",
+  "generated_at_utc": "2026-05-13T06:44:15.370324+00:00",
+  "rtd_rows": 237,
+  "status_counts": {
+    "done": 237
+  },
+  "single_layer_with_retention": 0,
+  "component_metrics": [
+    {
+      "score_field": "layer_index",
+      "n": 0
+    },
+    {
+      "score_field": "reverse_tail_priority",
+      "n": 0
+    },
+    {
+      "score_field": "bi_prune_priority",
+      "n": 0
+    },
+    {
+      "score_field": "normalized_delta_nll",
+      "n": 0
+    },
+    {
+      "score_field": "topk_union_jsd",
+      "n": 0
+    },
+    {
+      "score_field": "late_jsd_spike",
+      "n": 0
+    },
+    {
+      "score_field": "late_entropy_spike",
+      "n": 0
+    },
+    {
+      "score_field": "entropy_monotonicity_violation",
+      "n": 0
+    },
+    {
+      "score_field": "math_token_delta_nll",
+      "n": 0
+    },
+    {
+      "score_field": "answer_token_delta_nll",
+      "n": 0
+    },
+    {
+      "score_field": "overconfidence_collapse",
+      "n": 0
+    },
+    {
+      "score_field": "rtd",
+      "n": 0
+    }
+  ],
+  "calibration_summary": {
+    "status": "skipped",
+    "reason": "not enough single-layer rows"
+  },
+  "outputs": {
+    "rtd_scores": "/root/hs/paper2_layer_pruning/reports/day12_rtp_gate/rtd_scores.csv",
+    "single_layer_component_metrics": "/root/hs/paper2_layer_pruning/reports/day12_rtp_gate/single_layer_component_metrics.csv",
+    "top_risky_layers_by_rtd": "/root/hs/paper2_layer_pruning/reports/day12_rtp_gate/top_risky_layers_by_rtd.csv",
+    "multi_layer_comparison": "/root/hs/paper2_layer_pruning/reports/day12_rtp_gate/multi_layer_comparison.csv",
+    "rtd_calibrated_leave_one_out": "/root/hs/paper2_layer_pruning/reports/day12_rtp_gate/rtd_calibrated_leave_one_out.csv"
+  }
+}

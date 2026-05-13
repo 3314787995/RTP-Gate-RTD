@@ -1,0 +1,166 @@
+{
+  "status": "done",
+  "candidate_name": "single_layer_14",
+  "model_path": "/root/hs/paper2_layer_pruning/cache/huggingface/models--google--gemma-2-2b-it/snapshots/299a8560bedf22ed1c72a8a11e7dce4a7f9f51f8",
+  "adapter_path": null,
+  "runtime_skip_layers": [
+    14
+  ],
+  "runtime_skip": {
+    "enabled": true,
+    "skip_layers": [
+      14
+    ],
+    "kept_layers": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25
+    ],
+    "changed_sliding_if_resaved": [
+      {
+        "old_layer": 15,
+        "new_position": 14,
+        "original_is_sliding": false,
+        "resaved_would_be_sliding": true
+      },
+      {
+        "old_layer": 16,
+        "new_position": 15,
+        "original_is_sliding": true,
+        "resaved_would_be_sliding": false
+      },
+      {
+        "old_layer": 17,
+        "new_position": 16,
+        "original_is_sliding": false,
+        "resaved_would_be_sliding": true
+      },
+      {
+        "old_layer": 18,
+        "new_position": 17,
+        "original_is_sliding": true,
+        "resaved_would_be_sliding": false
+      },
+      {
+        "old_layer": 19,
+        "new_position": 18,
+        "original_is_sliding": false,
+        "resaved_would_be_sliding": true
+      },
+      {
+        "old_layer": 20,
+        "new_position": 19,
+        "original_is_sliding": true,
+        "resaved_would_be_sliding": false
+      },
+      {
+        "old_layer": 21,
+        "new_position": 20,
+        "original_is_sliding": false,
+        "resaved_would_be_sliding": true
+      },
+      {
+        "old_layer": 22,
+        "new_position": 21,
+        "original_is_sliding": true,
+        "resaved_would_be_sliding": false
+      },
+      {
+        "old_layer": 23,
+        "new_position": 22,
+        "original_is_sliding": false,
+        "resaved_would_be_sliding": true
+      },
+      {
+        "old_layer": 24,
+        "new_position": 23,
+        "original_is_sliding": true,
+        "resaved_would_be_sliding": false
+      },
+      {
+        "old_layer": 25,
+        "new_position": 24,
+        "original_is_sliding": false,
+        "resaved_would_be_sliding": true
+      }
+    ],
+    "preserve_layer_idx": false
+  },
+  "top_k": 100,
+  "trace_paths": [
+    "/root/hs/paper2_layer_pruning/results/day12_rtp_gate/traces/gsm8k_dense_traces_calibration.jsonl",
+    "/root/hs/paper2_layer_pruning/results/day12_rtp_gate/traces/gsm8k_dense_traces_holdout.jsonl"
+  ],
+  "trace_count": 300,
+  "weights": {
+    "normalized_delta_nll": 0.25,
+    "topk_union_jsd": 0.18,
+    "late_jsd_spike": 0.15,
+    "late_entropy_spike": 0.15,
+    "entropy_monotonicity_violation": 0.1,
+    "math_token_delta_nll": 0.08,
+    "answer_token_delta_nll": 0.05,
+    "overconfidence_collapse": 0.04
+  },
+  "overall": {
+    "normalized_delta_nll": 37.628426551556274,
+    "topk_union_jsd": 0.021539129371133947,
+    "late_jsd_spike": 0.1230333355748652,
+    "late_entropy_spike": 0.36905740568484635,
+    "entropy_monotonicity_violation": 0.15150934599036392,
+    "math_token_delta_nll": 80.74782244253963,
+    "answer_token_delta_nll": 4.844099158325152,
+    "overconfidence_collapse": 0.6373537771702457,
+    "rtd": 16.227473131370104,
+    "token_count": 174.56666666666666
+  },
+  "by_partition": {
+    "calibration": {
+      "normalized_delta_nll": 36.03694633471191,
+      "topk_union_jsd": 0.021544578207050646,
+      "late_jsd_spike": 0.12305245004114466,
+      "late_entropy_spike": 0.37434737828790077,
+      "entropy_monotonicity_violation": 0.15211065087370984,
+      "math_token_delta_nll": 78.76989784155349,
+      "answer_token_delta_nll": 6.230767705864883,
+      "overconfidence_collapse": 0.6677252553177159,
+      "rtd": 15.742774869922211,
+      "token_count": 174.43
+    },
+    "holdout": {
+      "normalized_delta_nll": 40.8113869852449,
+      "topk_union_jsd": 0.02152823169930058,
+      "late_jsd_spike": 0.1229951066423062,
+      "late_entropy_spike": 0.35847746047873785,
+      "entropy_monotonicity_violation": 0.15030673622367222,
+      "math_token_delta_nll": 84.70367164451214,
+      "answer_token_delta_nll": 2.070762063245687,
+      "overconfidence_collapse": 0.5766108208753047,
+      "rtd": 17.196869654265896,
+      "token_count": 174.84
+    }
+  },
+  "item_csv": "/root/hs/paper2_layer_pruning/results/day12_rtp_gate/rtd_scores/single_layer_14_items.csv"
+}

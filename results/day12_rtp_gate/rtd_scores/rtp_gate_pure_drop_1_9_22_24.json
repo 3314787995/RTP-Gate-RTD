@@ -1,0 +1,151 @@
+{
+  "status": "done",
+  "candidate_name": "rtp_gate_pure_drop_1_9_22_24",
+  "model_path": "/root/hs/paper2_layer_pruning/cache/huggingface/models--google--gemma-2-2b-it/snapshots/299a8560bedf22ed1c72a8a11e7dce4a7f9f51f8",
+  "adapter_path": null,
+  "runtime_skip_layers": [
+    1,
+    9,
+    22,
+    24
+  ],
+  "runtime_skip": {
+    "enabled": true,
+    "skip_layers": [
+      1,
+      9,
+      22,
+      24
+    ],
+    "kept_layers": [
+      0,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      23,
+      25
+    ],
+    "changed_sliding_if_resaved": [
+      {
+        "old_layer": 2,
+        "new_position": 1,
+        "original_is_sliding": true,
+        "resaved_would_be_sliding": false
+      },
+      {
+        "old_layer": 3,
+        "new_position": 2,
+        "original_is_sliding": false,
+        "resaved_would_be_sliding": true
+      },
+      {
+        "old_layer": 4,
+        "new_position": 3,
+        "original_is_sliding": true,
+        "resaved_would_be_sliding": false
+      },
+      {
+        "old_layer": 5,
+        "new_position": 4,
+        "original_is_sliding": false,
+        "resaved_would_be_sliding": true
+      },
+      {
+        "old_layer": 6,
+        "new_position": 5,
+        "original_is_sliding": true,
+        "resaved_would_be_sliding": false
+      },
+      {
+        "old_layer": 7,
+        "new_position": 6,
+        "original_is_sliding": false,
+        "resaved_would_be_sliding": true
+      },
+      {
+        "old_layer": 8,
+        "new_position": 7,
+        "original_is_sliding": true,
+        "resaved_would_be_sliding": false
+      },
+      {
+        "old_layer": 23,
+        "new_position": 20,
+        "original_is_sliding": false,
+        "resaved_would_be_sliding": true
+      }
+    ],
+    "preserve_layer_idx": false
+  },
+  "top_k": 100,
+  "trace_paths": [
+    "/root/hs/paper2_layer_pruning/results/day12_rtp_gate/traces/gsm8k_dense_traces_calibration.jsonl",
+    "/root/hs/paper2_layer_pruning/results/day12_rtp_gate/traces/gsm8k_dense_traces_holdout.jsonl"
+  ],
+  "trace_count": 300,
+  "weights": {
+    "normalized_delta_nll": 0.25,
+    "topk_union_jsd": 0.18,
+    "late_jsd_spike": 0.15,
+    "late_entropy_spike": 0.15,
+    "entropy_monotonicity_violation": 0.1,
+    "math_token_delta_nll": 0.08,
+    "answer_token_delta_nll": 0.05,
+    "overconfidence_collapse": 0.04
+  },
+  "overall": {
+    "normalized_delta_nll": 280.60675312133105,
+    "topk_union_jsd": 0.08145418563167496,
+    "late_jsd_spike": 0.34858415825413513,
+    "late_entropy_spike": 1.6330965060754548,
+    "entropy_monotonicity_violation": 0.3017785929362717,
+    "math_token_delta_nll": 284.0971907548738,
+    "answer_token_delta_nll": 120.31998985061315,
+    "overconfidence_collapse": 1.5415182006074333,
+    "rtd": 99.29921547363438,
+    "token_count": 174.56666666666666
+  },
+  "by_partition": {
+    "calibration": {
+      "normalized_delta_nll": 278.25345668209076,
+      "topk_union_jsd": 0.08090860098657399,
+      "late_jsd_spike": 0.34676552191442994,
+      "late_entropy_spike": 1.604619412047451,
+      "entropy_monotonicity_violation": 0.29939034073359094,
+      "math_token_delta_nll": 287.57434864025817,
+      "answer_token_delta_nll": 114.64157642360551,
+      "overconfidence_collapse": 1.5461165805420878,
+      "rtd": 98.70044586849058,
+      "token_count": 174.43
+    },
+    "holdout": {
+      "normalized_delta_nll": 285.3133459998112,
+      "topk_union_jsd": 0.08254535492187681,
+      "late_jsd_spike": 0.35222143093354624,
+      "late_entropy_spike": 1.6900506941314586,
+      "entropy_monotonicity_violation": 0.30655509734163305,
+      "math_token_delta_nll": 277.14287498410454,
+      "answer_token_delta_nll": 131.67681670462866,
+      "overconfidence_collapse": 1.5323214407381203,
+      "rtd": 100.49675468392199,
+      "token_count": 174.84
+    }
+  },
+  "item_csv": "/root/hs/paper2_layer_pruning/results/day12_rtp_gate/rtd_scores/rtp_gate_pure_drop_1_9_22_24_items.csv"
+}

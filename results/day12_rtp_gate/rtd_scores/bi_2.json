@@ -1,0 +1,100 @@
+{
+  "status": "done",
+  "candidate_name": "bi_2",
+  "model_path": "/root/hs/paper2_layer_pruning/cache/huggingface/models--google--gemma-2-2b-it/snapshots/299a8560bedf22ed1c72a8a11e7dce4a7f9f51f8",
+  "adapter_path": null,
+  "runtime_skip_layers": [
+    23,
+    24
+  ],
+  "runtime_skip": {
+    "enabled": true,
+    "skip_layers": [
+      23,
+      24
+    ],
+    "kept_layers": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      25
+    ],
+    "changed_sliding_if_resaved": [],
+    "preserve_layer_idx": false
+  },
+  "top_k": 100,
+  "trace_paths": [
+    "/root/hs/paper2_layer_pruning/results/day12_rtp_gate/traces/gsm8k_dense_traces_calibration.jsonl",
+    "/root/hs/paper2_layer_pruning/results/day12_rtp_gate/traces/gsm8k_dense_traces_holdout.jsonl"
+  ],
+  "trace_count": 300,
+  "weights": {
+    "normalized_delta_nll": 0.25,
+    "topk_union_jsd": 0.18,
+    "late_jsd_spike": 0.15,
+    "late_entropy_spike": 0.15,
+    "entropy_monotonicity_violation": 0.1,
+    "math_token_delta_nll": 0.08,
+    "answer_token_delta_nll": 0.05,
+    "overconfidence_collapse": 0.04
+  },
+  "overall": {
+    "normalized_delta_nll": 224.93132752442372,
+    "topk_union_jsd": 0.05211531092014146,
+    "late_jsd_spike": 0.23388309374030664,
+    "late_entropy_spike": 0.7125530969401007,
+    "entropy_monotonicity_violation": 0.19176572353564691,
+    "math_token_delta_nll": 226.2341735988472,
+    "answer_token_delta_nll": 21.13381068448045,
+    "overconfidence_collapse": 0.7135325910508126,
+    "rtd": 75.587320363801,
+    "token_count": 174.56666666666666
+  },
+  "by_partition": {
+    "calibration": {
+      "normalized_delta_nll": 229.11610242949476,
+      "topk_union_jsd": 0.052354665389813766,
+      "late_jsd_spike": 0.23547530353821625,
+      "late_entropy_spike": 0.7246549335792625,
+      "entropy_monotonicity_violation": 0.19283039639235017,
+      "math_token_delta_nll": 228.04232640783607,
+      "answer_token_delta_nll": 27.469407472177558,
+      "overconfidence_collapse": 0.7229114240692206,
+      "rtd": 77.09752496554924,
+      "token_count": 174.43
+    },
+    "holdout": {
+      "normalized_delta_nll": 216.56177771428167,
+      "topk_union_jsd": 0.05163660198079697,
+      "late_jsd_spike": 0.23069867414448722,
+      "late_entropy_spike": 0.6883494236617769,
+      "entropy_monotonicity_violation": 0.18963637782224027,
+      "math_token_delta_nll": 222.61786798086973,
+      "answer_token_delta_nll": 8.462617109086285,
+      "overconfidence_collapse": 0.6947749250139974,
+      "rtd": 72.56691116030453,
+      "token_count": 174.84
+    }
+  },
+  "item_csv": "/root/hs/paper2_layer_pruning/results/day12_rtp_gate/rtd_scores/bi_2_items.csv"
+}
