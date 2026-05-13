@@ -6,6 +6,7 @@ from datetime import datetime, timezone
 import json
 import os
 from pathlib import Path
+from queue import Queue
 import subprocess
 import sys
 
@@ -83,9 +84,8 @@ def jobs() -> list[tuple[str, list[str], Path, str]]:
     return out
 
 
-def run_one(index: int, spec: tuple[str, list[str], Path, str]) -> dict:
+def run_one(gpu: str, spec: tuple[str, list[str], Path, str]) -> dict:
     name, command, output, kind = spec
-    gpu = GPUS[index % len(GPUS)]
     log_path = LOG_DIR / f'{name}.log'
     status_path = LOG_DIR / f'{name}.status.json'
     if is_done(output):
@@ -121,8 +121,19 @@ def main() -> int:
     manifest_path.parent.mkdir(parents=True, exist_ok=True)
     manifest_path.write_text(json.dumps(manifest, indent=2) + '\n', encoding='utf-8')
     failures = []
+    gpu_queue: Queue[str] = Queue()
+    for gpu in GPUS:
+        gpu_queue.put(gpu)
+
+    def run_with_available_gpu(spec: tuple[str, list[str], Path, str]) -> dict:
+        gpu = gpu_queue.get()
+        try:
+            return run_one(gpu, spec)
+        finally:
+            gpu_queue.put(gpu)
+
     with ThreadPoolExecutor(max_workers=len(GPUS)) as pool:
-        futures = {pool.submit(run_one, idx, spec): spec[0] for idx, spec in enumerate(all_jobs)}
+        futures = {pool.submit(run_with_available_gpu, spec): spec[0] for spec in all_jobs}
         for future in as_completed(futures):
             result = future.result()
             if result.get('status') == 'failed':

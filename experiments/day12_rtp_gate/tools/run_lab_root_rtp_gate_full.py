@@ -8,6 +8,7 @@ import csv
 import json
 import os
 from pathlib import Path
+from queue import Queue
 import subprocess
 import sys
 from datetime import datetime, timezone
@@ -116,11 +117,21 @@ class Runner:
         if not jobs:
             return
         workers = max(1, min(len(self.gpu_ids), self.args.max_workers, len(jobs)))
+        gpu_queue: Queue[str] = Queue()
+        for gpu in self.gpu_ids[:workers]:
+            gpu_queue.put(gpu)
+
+        def run_with_available_gpu(name: str, command: list[str]) -> None:
+            gpu = gpu_queue.get()
+            try:
+                self.run(name, command, gpu)
+            finally:
+                gpu_queue.put(gpu)
+
         with ThreadPoolExecutor(max_workers=workers) as pool:
             futures = []
-            for idx, (name, command) in enumerate(jobs):
-                gpu = self.gpu_ids[idx % len(self.gpu_ids)]
-                futures.append(pool.submit(self.run, name, command, gpu))
+            for name, command in jobs:
+                futures.append(pool.submit(run_with_available_gpu, name, command))
             for future in as_completed(futures):
                 future.result()
 
