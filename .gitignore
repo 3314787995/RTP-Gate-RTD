@@ -11,6 +11,7 @@ models/
 tmp/
 .venv/
 venv/
+node_modules/
 
 # Large/intermediate experiment artifacts
 results/day12_rtp_gate/traces/*.jsonl

@@ -97,6 +97,26 @@ def update_output_metadata(argv: list[str], runtime_skip: dict) -> None:
     out_json.write_text(json.dumps(data, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
 
 
+def assert_runtime_skip_was_applied(argv: list[str], skip_layers: list[int], runtime_skip: dict) -> None:
+    if not skip_layers or runtime_skip:
+        return
+    output_dir = arg_value(argv, "--output-dir")
+    run_id = arg_value(argv, "--run-id")
+    task = arg_value(argv, "--task")
+    samples = arg_value(argv, "--samples", "200")
+    out_json = Path(output_dir) / f"{run_id}_{task}_{samples}.json" if output_dir and run_id and task else None
+    existing_runtime_skip = None
+    if out_json and out_json.exists():
+        existing_runtime_skip = json.loads(out_json.read_text(encoding="utf-8")).get("runtime_skip")
+    if existing_runtime_skip and existing_runtime_skip.get("skip_layers") == skip_layers:
+        return
+    raise RuntimeError(
+        "Runtime skip layers were requested, but the Day9 classification evaluator did not load a model. "
+        "This usually means it returned an existing output JSON before the Day12 wrapper could apply layer "
+        "skipping. Remove the stale output or use a fresh output directory before rerunning."
+    )
+
+
 def main() -> None:
     cleaned_argv, skip_layers = strip_runtime_skip_arg(sys.argv)
     experiments_dir = Path(__file__).resolve().parents[2]
@@ -105,7 +125,8 @@ def main() -> None:
         raise SystemExit(f"Missing Day9 classification evaluator: {target}")
 
     module_globals = runpy.run_path(str(target), run_name="day9_classification_eval")
-    original_auto_model = module_globals["AutoModelForCausalLM"]
+    day9_globals = module_globals["main"].__globals__
+    original_auto_model = day9_globals["AutoModelForCausalLM"]
     runtime_skip_state: dict = {}
 
     class RuntimeSkipAutoModel:
@@ -115,13 +136,14 @@ def main() -> None:
             runtime_skip_state.update(runtime_skip_layers(model, skip_layers))
             return model
 
-    module_globals["AutoModelForCausalLM"] = RuntimeSkipAutoModel
+    day9_globals["AutoModelForCausalLM"] = RuntimeSkipAutoModel
     old_argv = sys.argv
     try:
         sys.argv = cleaned_argv
         module_globals["main"]()
     finally:
         sys.argv = old_argv
+    assert_runtime_skip_was_applied(cleaned_argv, skip_layers, runtime_skip_state)
     update_output_metadata(cleaned_argv, runtime_skip_state)
 
 
