@@ -6,11 +6,17 @@ import argparse
 import json
 import math
 import os
+import random
 import re
 from pathlib import Path
 
-import torch
-from transformers import AutoModelForCausalLM, AutoTokenizer
+try:
+    import torch
+    from transformers import AutoModelForCausalLM, AutoTokenizer
+except ModuleNotFoundError:
+    torch = None
+    AutoModelForCausalLM = None
+    AutoTokenizer = None
 
 
 DEFAULT_BASELINE = "results/day5_technical_gap_closure/gemma_base_full_eval_gsm8k_1319.json"
@@ -28,6 +34,27 @@ def require_under_root(path: Path, root: Path) -> Path:
 def load_json(path: Path) -> dict:
     with path.open("r", encoding="utf-8") as f:
         return json.load(f)
+
+
+def require_runtime_deps() -> None:
+    global torch, AutoModelForCausalLM, AutoTokenizer
+    if torch is not None and AutoModelForCausalLM is not None and AutoTokenizer is not None:
+        return
+    import torch as torch_module
+    from transformers import AutoModelForCausalLM as auto_model
+    from transformers import AutoTokenizer as auto_tokenizer
+
+    torch = torch_module
+    AutoModelForCausalLM = auto_model
+    AutoTokenizer = auto_tokenizer
+
+
+def select_dense_correct_items(items: list[dict], total_needed: int, seed: int, shuffle_correct_items: bool) -> list[dict]:
+    correct_items = [item for item in items if item.get("correct") is True]
+    if shuffle_correct_items:
+        correct_items = list(correct_items)
+        random.Random(seed).shuffle(correct_items)
+    return correct_items[:total_needed]
 
 
 def set_cache_config(model) -> None:
@@ -225,8 +252,10 @@ def main() -> None:
     parser.add_argument("--top-k", type=int, default=100)
     parser.add_argument("--max-seq-tokens", type=int, default=2560)
     parser.add_argument("--seed", type=int, default=1234)
+    parser.add_argument("--shuffle-correct-items", action="store_true")
     args = parser.parse_args()
 
+    require_runtime_deps()
     root = Path(args.root).resolve()
     baseline_path = Path(args.baseline_json) if args.baseline_json else root / DEFAULT_BASELINE
     baseline_path = require_under_root(baseline_path, root)
@@ -240,8 +269,12 @@ def main() -> None:
     total_needed = smoke_n + calibration_n + holdout_n
 
     baseline = load_json(baseline_path)
-    correct_items = [item for item in baseline.get("items", []) if item.get("correct") is True]
-    correct_items = correct_items[:total_needed]
+    correct_items = select_dense_correct_items(
+        list(baseline.get("items", [])),
+        total_needed=total_needed,
+        seed=args.seed,
+        shuffle_correct_items=args.shuffle_correct_items,
+    )
     if len(correct_items) < total_needed:
         raise RuntimeError(f"Need {total_needed} dense-correct items, found {len(correct_items)}")
 
@@ -303,8 +336,10 @@ def main() -> None:
         "top_k": args.top_k,
         "max_seq_tokens": args.max_seq_tokens,
         "seed": args.seed,
+        "shuffle_correct_items": args.shuffle_correct_items,
         "partition_mode": args.partition_mode,
         "counts": {name: len(rows) for name, rows in partitions.items()},
+        "selected_source_indices": [record.get("source_index") for rows in partitions.values() for record in rows],
         "outputs": outputs,
     }
     (output_dir / "gsm8k_dense_trace_manifest.json").write_text(

@@ -1,0 +1,814 @@
+{
+  "snapshot": {
+    "server": "lab-root",
+    "root": "/root/hs/paper2_layer_pruning",
+    "snapshot_time_beijing": "2026-05-14 19:28",
+    "phase": "extended k-curve and seed stability"
+  },
+  "k_curve": {
+    "manifest": {
+      "status": "done",
+      "created_at_utc": "2026-05-14T03:53:54.781006+00:00",
+      "output_dir": "/root/hs/paper2_layer_pruning/results/day12_rtp_gate/raw_eval/generation_k_curve_20260514",
+      "log_dir": "/root/hs/paper2_layer_pruning/logs/day12_rtp_gate/generation_k_curve_20260514",
+      "samples": 500,
+      "gpus": [
+        "0",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5"
+      ],
+      "candidates": [
+        {
+          "name": "rtp_gate_k2",
+          "layers": [
+            1,
+            24
+          ],
+          "source_candidate_name": "",
+          "calibration_rtd": null
+        },
+        {
+          "name": "rtp_gate_k5",
+          "layers": [
+            1,
+            9,
+            10,
+            19,
+            24
+          ],
+          "source_candidate_name": "",
+          "calibration_rtd": null
+        },
+        {
+          "name": "reverse_2",
+          "layers": [
+            24,
+            25
+          ],
+          "source_candidate_name": "",
+          "calibration_rtd": null
+        },
+        {
+          "name": "reverse_5",
+          "layers": [
+            21,
+            22,
+            23,
+            24,
+            25
+          ],
+          "source_candidate_name": "",
+          "calibration_rtd": null
+        },
+        {
+          "name": "iterative_proxy_k2",
+          "layers": [
+            24,
+            25
+          ],
+          "source_candidate_name": "",
+          "calibration_rtd": null
+        },
+        {
+          "name": "iterative_proxy_k5",
+          "layers": [
+            1,
+            21,
+            22,
+            24,
+            25
+          ],
+          "source_candidate_name": "",
+          "calibration_rtd": null
+        }
+      ],
+      "finished_at_utc": "2026-05-14T11:16:48.954076+00:00",
+      "done_count": 6,
+      "job_count": 6,
+      "failures": []
+    },
+    "new_results": [
+      {
+        "status": "done",
+        "run_id": "rtp_gate_k2",
+        "task": "gsm8k",
+        "samples": 500,
+        "score": 0.54,
+        "runtime_skip_layers": [
+          1,
+          24
+        ],
+        "model_path": "/root/hs/paper2_layer_pruning/cache/huggingface/models--google--gemma-2-2b-it/snapshots/299a8560bedf22ed1c72a8a11e7dce4a7f9f51f8",
+        "file": "/root/hs/paper2_layer_pruning/results/day12_rtp_gate/raw_eval/generation_k_curve_20260514/rtp_gate_k2_gsm8k_500.json"
+      },
+      {
+        "status": "done",
+        "run_id": "rtp_gate_k5",
+        "task": "gsm8k",
+        "samples": 500,
+        "score": 0.066,
+        "runtime_skip_layers": [
+          1,
+          9,
+          10,
+          19,
+          24
+        ],
+        "model_path": "/root/hs/paper2_layer_pruning/cache/huggingface/models--google--gemma-2-2b-it/snapshots/299a8560bedf22ed1c72a8a11e7dce4a7f9f51f8",
+        "file": "/root/hs/paper2_layer_pruning/results/day12_rtp_gate/raw_eval/generation_k_curve_20260514/rtp_gate_k5_gsm8k_500.json"
+      },
+      {
+        "status": "done",
+        "run_id": "reverse_2",
+        "task": "gsm8k",
+        "samples": 500,
+        "score": 0.41,
+        "runtime_skip_layers": [
+          24,
+          25
+        ],
+        "model_path": "/root/hs/paper2_layer_pruning/cache/huggingface/models--google--gemma-2-2b-it/snapshots/299a8560bedf22ed1c72a8a11e7dce4a7f9f51f8",
+        "file": "/root/hs/paper2_layer_pruning/results/day12_rtp_gate/raw_eval/generation_k_curve_20260514/reverse_2_gsm8k_500.json"
+      },
+      {
+        "status": "done",
+        "run_id": "reverse_5",
+        "task": "gsm8k",
+        "samples": 500,
+        "score": 0.0,
+        "runtime_skip_layers": [
+          21,
+          22,
+          23,
+          24,
+          25
+        ],
+        "model_path": "/root/hs/paper2_layer_pruning/cache/huggingface/models--google--gemma-2-2b-it/snapshots/299a8560bedf22ed1c72a8a11e7dce4a7f9f51f8",
+        "file": "/root/hs/paper2_layer_pruning/results/day12_rtp_gate/raw_eval/generation_k_curve_20260514/reverse_5_gsm8k_500.json"
+      },
+      {
+        "status": "done",
+        "run_id": "iterative_proxy_k2",
+        "task": "gsm8k",
+        "samples": 500,
+        "score": 0.41,
+        "runtime_skip_layers": [
+          24,
+          25
+        ],
+        "model_path": "/root/hs/paper2_layer_pruning/cache/huggingface/models--google--gemma-2-2b-it/snapshots/299a8560bedf22ed1c72a8a11e7dce4a7f9f51f8",
+        "file": "/root/hs/paper2_layer_pruning/results/day12_rtp_gate/raw_eval/generation_k_curve_20260514/iterative_proxy_k2_gsm8k_500.json"
+      },
+      {
+        "status": "done",
+        "run_id": "iterative_proxy_k5",
+        "task": "gsm8k",
+        "samples": 500,
+        "score": 0.092,
+        "runtime_skip_layers": [
+          1,
+          21,
+          22,
+          24,
+          25
+        ],
+        "model_path": "/root/hs/paper2_layer_pruning/cache/huggingface/models--google--gemma-2-2b-it/snapshots/299a8560bedf22ed1c72a8a11e7dce4a7f9f51f8",
+        "file": "/root/hs/paper2_layer_pruning/results/day12_rtp_gate/raw_eval/generation_k_curve_20260514/iterative_proxy_k5_gsm8k_500.json"
+      }
+    ]
+  },
+  "stability": {
+    "seed": 5678,
+    "manifest": {
+      "status": "done",
+      "created_at_utc": "2026-05-14T02:21:23.584068+00:00",
+      "seed": 5678,
+      "output_root": "/root/hs/paper2_layer_pruning/results/day12_rtp_gate_stability/seed_5678",
+      "gpus": [
+        "3",
+        "4",
+        "5"
+      ],
+      "counts": {
+        "smoke": 50,
+        "calibration": 200,
+        "holdout": 100
+      },
+      "finished_at_utc": "2026-05-14T03:37:50.647909+00:00",
+      "summary": {
+        "summary_csv": "/root/hs/paper2_layer_pruning/reports/day12_rtp_gate/stability_seed_5678_summary.csv",
+        "selection_csv": "/root/hs/paper2_layer_pruning/reports/day12_rtp_gate/stability_seed_5678_selection_overlap.csv",
+        "single_layer_csv": "/root/hs/paper2_layer_pruning/reports/day12_rtp_gate/stability_seed_5678_single_layer_rtd.csv",
+        "report_md": "/root/hs/paper2_layer_pruning/reports/day12_rtp_gate/stability_seed_5678_report.md",
+        "single_layer_spearman": 0.9323076923076923,
+        "top5_overlap": 5,
+        "selection_rows": [
+          {
+            "family": "rtp_gate_pure",
+            "k": 2,
+            "base_layers": "1,24",
+            "seed_layers": "1,24",
+            "jaccard": "1.000000"
+          },
+          {
+            "family": "rtp_gate_pure",
+            "k": 3,
+            "base_layers": "1,9,24",
+            "seed_layers": "1,9,24",
+            "jaccard": "1.000000"
+          },
+          {
+            "family": "rtp_gate_pure",
+            "k": 5,
+            "base_layers": "1,9,10,19,24",
+            "seed_layers": "1,9,10,19,24",
+            "jaccard": "1.000000"
+          },
+          {
+            "family": "rtp_gate_structure",
+            "k": 2,
+            "base_layers": "1,24",
+            "seed_layers": "1,24",
+            "jaccard": "1.000000"
+          },
+          {
+            "family": "rtp_gate_structure",
+            "k": 3,
+            "base_layers": "1,9,24",
+            "seed_layers": "1,9,24",
+            "jaccard": "1.000000"
+          },
+          {
+            "family": "rtp_gate_structure",
+            "k": 5,
+            "base_layers": "1,9,10,19,24",
+            "seed_layers": "1,9,10,19,24",
+            "jaccard": "1.000000"
+          }
+        ]
+      }
+    },
+    "trace_manifest": {
+      "status": "done",
+      "model_path": "/root/hs/paper2_layer_pruning/cache/huggingface/models--google--gemma-2-2b-it/snapshots/299a8560bedf22ed1c72a8a11e7dce4a7f9f51f8",
+      "baseline_json": "/root/hs/paper2_layer_pruning/results/day5_technical_gap_closure/gemma_base_full_eval_gsm8k_1319.json",
+      "top_k": 100,
+      "max_seq_tokens": 2048,
+      "seed": 5678,
+      "shuffle_correct_items": true,
+      "partition_mode": "full",
+      "counts": {
+        "smoke": 50,
+        "calibration": 200,
+        "holdout": 100
+      },
+      "selected_source_indices": [
+        495,
+        83,
+        1256,
+        702,
+        663,
+        927,
+        1101,
+        1160,
+        667,
+        1194,
+        142,
+        33,
+        1141,
+        118,
+        1308,
+        22,
+        61,
+        732,
+        171,
+        1297,
+        463,
+        888,
+        185,
+        786,
+        270,
+        1034,
+        109,
+        933,
+        398,
+        306,
+        207,
+        32,
+        279,
+        243,
+        856,
+        1247,
+        123,
+        164,
+        729,
+        1041,
+        414,
+        756,
+        318,
+        618,
+        1271,
+        161,
+        160,
+        940,
+        1299,
+        1163,
+        112,
+        1313,
+        201,
+        668,
+        895,
+        628,
+        1191,
+        66,
+        1117,
+        52,
+        274,
+        370,
+        126,
+        655,
+        1038,
+        105,
+        616,
+        1233,
+        1230,
+        451,
+        656,
+        581,
+        457,
+        638,
+        86,
+        362,
+        713,
+        421,
+        1267,
+        290,
+        1150,
+        673,
+        939,
+        875,
+        881,
+        1177,
+        1253,
+        972,
+        165,
+        107,
+        617,
+        627,
+        918,
+        345,
+        1317,
+        1113,
+        1240,
+        1180,
+        1257,
+        11,
+        515,
+        746,
+        187,
+        1008,
+        825,
+        379,
+        256,
+        222,
+        1002,
+        930,
+        1006,
+        1302,
+        49,
+        467,
+        913,
+        1305,
+        218,
+        642,
+        509,
+        870,
+        750,
+        1251,
+        603,
+        449,
+        372,
+        344,
+        203,
+        542,
+        488,
+        0,
+        82,
+        1138,
+        1069,
+        766,
+        237,
+        916,
+        288,
+        51,
+        286,
+        1228,
+        686,
+        462,
+        637,
+        446,
+        4,
+        758,
+        1031,
+        982,
+        625,
+        277,
+        305,
+        1011,
+        696,
+        935,
+        614,
+        188,
+        1007,
+        1255,
+        1112,
+        219,
+        1290,
+        179,
+        352,
+        1171,
+        69,
+        1055,
+        1200,
+        1095,
+        740,
+        146,
+        408,
+        511,
+        16,
+        906,
+        981,
+        737,
+        839,
+        424,
+        56,
+        506,
+        251,
+        139,
+        762,
+        832,
+        634,
+        544,
+        1201,
+        143,
+        1178,
+        332,
+        519,
+        792,
+        480,
+        645,
+        77,
+        339,
+        91,
+        742,
+        1144,
+        364,
+        197,
+        502,
+        698,
+        977,
+        1292,
+        705,
+        566,
+        402,
+        1277,
+        80,
+        896,
+        723,
+        678,
+        974,
+        560,
+        568,
+        329,
+        346,
+        1063,
+        747,
+        103,
+        1268,
+        1147,
+        522,
+        684,
+        189,
+        272,
+        595,
+        152,
+        1283,
+        671,
+        1074,
+        242,
+        1060,
+        1167,
+        1210,
+        79,
+        731,
+        128,
+        1123,
+        816,
+        465,
+        558,
+        995,
+        1250,
+        53,
+        743,
+        1023,
+        567,
+        108,
+        173,
+        599,
+        688,
+        483,
+        375,
+        85,
+        872,
+        378,
+        860,
+        1115,
+        647,
+        1281,
+        853,
+        1058,
+        399,
+        1090,
+        1135,
+        947,
+        1017,
+        132,
+        27,
+        912,
+        365,
+        670,
+        292,
+        518,
+        983,
+        706,
+        479,
+        284,
+        1157,
+        1014,
+        156,
+        850,
+        405,
+        848,
+        1131,
+        1272,
+        1,
+        311,
+        636,
+        104,
+        600,
+        975,
+        1316,
+        208,
+        1102,
+        295,
+        1295,
+        801,
+        158,
+        248,
+        1120,
+        944,
+        504,
+        358,
+        661,
+        1270,
+        1153,
+        836,
+        31,
+        211,
+        1061,
+        72,
+        81,
+        536,
+        664,
+        387,
+        633,
+        333,
+        857,
+        212,
+        1232,
+        281,
+        557,
+        730,
+        1224,
+        1085,
+        1114,
+        521,
+        693,
+        386,
+        42,
+        40,
+        915,
+        482,
+        908,
+        360,
+        733,
+        168,
+        963,
+        1266,
+        300,
+        1121,
+        1108,
+        874,
+        420,
+        169,
+        127,
+        473
+      ],
+      "outputs": {
+        "smoke": "/root/hs/paper2_layer_pruning/results/day12_rtp_gate_stability/seed_5678/traces/gsm8k_dense_traces_smoke.jsonl",
+        "calibration": "/root/hs/paper2_layer_pruning/results/day12_rtp_gate_stability/seed_5678/traces/gsm8k_dense_traces_calibration.jsonl",
+        "holdout": "/root/hs/paper2_layer_pruning/results/day12_rtp_gate_stability/seed_5678/traces/gsm8k_dense_traces_holdout.jsonl"
+      }
+    },
+    "summary": [
+      {
+        "seed": "5678",
+        "single_layer_count": "26",
+        "single_layer_spearman": "0.932308",
+        "base_top5_layers": "0,4,16,18,20",
+        "seed_top5_layers": "0,4,16,18,20",
+        "top5_overlap": "5"
+      }
+    ],
+    "selection_overlap": [
+      {
+        "family": "rtp_gate_pure",
+        "k": "2",
+        "base_layers": "1,24",
+        "seed_layers": "1,24",
+        "jaccard": "1.000000"
+      },
+      {
+        "family": "rtp_gate_pure",
+        "k": "3",
+        "base_layers": "1,9,24",
+        "seed_layers": "1,9,24",
+        "jaccard": "1.000000"
+      },
+      {
+        "family": "rtp_gate_pure",
+        "k": "5",
+        "base_layers": "1,9,10,19,24",
+        "seed_layers": "1,9,10,19,24",
+        "jaccard": "1.000000"
+      },
+      {
+        "family": "rtp_gate_structure",
+        "k": "2",
+        "base_layers": "1,24",
+        "seed_layers": "1,24",
+        "jaccard": "1.000000"
+      },
+      {
+        "family": "rtp_gate_structure",
+        "k": "3",
+        "base_layers": "1,9,24",
+        "seed_layers": "1,9,24",
+        "jaccard": "1.000000"
+      },
+      {
+        "family": "rtp_gate_structure",
+        "k": "5",
+        "base_layers": "1,9,10,19,24",
+        "seed_layers": "1,9,10,19,24",
+        "jaccard": "1.000000"
+      }
+    ],
+    "single_layer_rtd": [
+      {
+        "layer": "0",
+        "base_calibration_rtd": "322.13201987494244",
+        "seed_calibration_rtd": "380.954265499123"
+      },
+      {
+        "layer": "1",
+        "base_calibration_rtd": "0.5677944513765079",
+        "seed_calibration_rtd": "0.9026132597691974"
+      },
+      {
+        "layer": "2",
+        "base_calibration_rtd": "24.500055145707485",
+        "seed_calibration_rtd": "23.74105097838286"
+      },
+      {
+        "layer": "3",
+        "base_calibration_rtd": "6.424112236464151",
+        "seed_calibration_rtd": "6.579960140009142"
+      },
+      {
+        "layer": "4",
+        "base_calibration_rtd": "43.681155332930345",
+        "seed_calibration_rtd": "55.66897272902518"
+      },
+      {
+        "layer": "5",
+        "base_calibration_rtd": "13.016833641976195",
+        "seed_calibration_rtd": "14.952676801004264"
+      },
+      {
+        "layer": "6",
+        "base_calibration_rtd": "7.739532407208781",
+        "seed_calibration_rtd": "5.067318972632216"
+      },
+      {
+        "layer": "7",
+        "base_calibration_rtd": "13.343285155702558",
+        "seed_calibration_rtd": "11.843141853838487"
+      },
+      {
+        "layer": "8",
+        "base_calibration_rtd": "6.096502422719022",
+        "seed_calibration_rtd": "5.5599856291535605"
+      },
+      {
+        "layer": "9",
+        "base_calibration_rtd": "3.4498208789538025",
+        "seed_calibration_rtd": "7.140915152701241"
+      },
+      {
+        "layer": "10",
+        "base_calibration_rtd": "8.39172312812811",
+        "seed_calibration_rtd": "7.711112379972629"
+      },
+      {
+        "layer": "11",
+        "base_calibration_rtd": "13.726647073102086",
+        "seed_calibration_rtd": "10.691122491153289"
+      },
+      {
+        "layer": "12",
+        "base_calibration_rtd": "7.937727452169995",
+        "seed_calibration_rtd": "5.66234201013301"
+      },
+      {
+        "layer": "13",
+        "base_calibration_rtd": "14.923889174524518",
+        "seed_calibration_rtd": "15.260874517977038"
+      },
+      {
+        "layer": "14",
+        "base_calibration_rtd": "15.742774869922211",
+        "seed_calibration_rtd": "14.895417989276744"
+      },
+      {
+        "layer": "15",
+        "base_calibration_rtd": "24.781781977657534",
+        "seed_calibration_rtd": "32.52805386497876"
+      },
+      {
+        "layer": "16",
+        "base_calibration_rtd": "72.81796418209402",
+        "seed_calibration_rtd": "86.4616044121312"
+      },
+      {
+        "layer": "17",
+        "base_calibration_rtd": "32.231804920050166",
+        "seed_calibration_rtd": "40.4926882200825"
+      },
+      {
+        "layer": "18",
+        "base_calibration_rtd": "128.06402609012395",
+        "seed_calibration_rtd": "151.5107420449139"
+      },
+      {
+        "layer": "19",
+        "base_calibration_rtd": "16.977963720759824",
+        "seed_calibration_rtd": "22.633785031063915"
+      },
+      {
+        "layer": "20",
+        "base_calibration_rtd": "141.81217896747762",
+        "seed_calibration_rtd": "150.05238608474858"
+      },
+      {
+        "layer": "21",
+        "base_calibration_rtd": "6.51414239945631",
+        "seed_calibration_rtd": "10.375230523325666"
+      },
+      {
+        "layer": "22",
+        "base_calibration_rtd": "11.558584989923718",
+        "seed_calibration_rtd": "11.886167521262546"
+      },
+      {
+        "layer": "23",
+        "base_calibration_rtd": "7.1124650638023965",
+        "seed_calibration_rtd": "12.135790376509794"
+      },
+      {
+        "layer": "24",
+        "base_calibration_rtd": "4.832464681065639",
+        "seed_calibration_rtd": "4.785687803034467"
+      },
+      {
+        "layer": "25",
+        "base_calibration_rtd": "11.445885920147322",
+        "seed_calibration_rtd": "7.0785318620593225"
+      }
+    ],
+    "report_md": "/root/hs/paper2_layer_pruning/reports/day12_rtp_gate/stability_seed_5678_report.md"
+  }
+}

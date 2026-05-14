@@ -87,6 +87,7 @@ def ensure_score(
     layers: list[int],
     name: str,
     top_k: int,
+    max_seq_tokens: int,
     max_traces: int | None,
     force: bool,
 ) -> Path:
@@ -110,6 +111,8 @@ def ensure_score(
         str(output_dir),
         "--top-k",
         str(top_k),
+        "--max-seq-tokens",
+        str(max_seq_tokens),
     ]
     for path in trace_jsonl:
         cmd.extend(["--trace-jsonl", str(path)])
@@ -165,6 +168,7 @@ def run_greedy(args) -> dict:
                 layers,
                 name,
                 args.top_k,
+                args.max_seq_tokens,
                 args.max_traces,
                 args.force_scores,
             )
@@ -279,6 +283,7 @@ def main() -> None:
     parser.add_argument("--target-k", default="2,3,5")
     parser.add_argument("--total-layers", type=int, default=TOTAL_LAYERS)
     parser.add_argument("--top-k", type=int, default=100)
+    parser.add_argument("--max-seq-tokens", type=int, default=2048)
     parser.add_argument("--max-traces", type=int, default=None)
     parser.add_argument("--selection-partition", default="overall")
     parser.add_argument("--structure-aware", action="store_true")
@@ -292,4 +297,3 @@ def main() -> None:
 
 if __name__ == "__main__":
     main()
-

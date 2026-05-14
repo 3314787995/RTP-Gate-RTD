@@ -1,0 +1,7 @@
+family,k,base_layers,seed_layers,jaccard
+rtp_gate_pure,2,"1,24","1,24",1.000000
+rtp_gate_pure,3,"1,9,24","1,9,24",1.000000
+rtp_gate_pure,5,"1,9,10,19,24","1,9,10,19,24",1.000000
+rtp_gate_structure,2,"1,24","1,24",1.000000
+rtp_gate_structure,3,"1,9,24","1,9,24",1.000000
+rtp_gate_structure,5,"1,9,10,19,24","1,9,10,19,24",1.000000
